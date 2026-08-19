@@ -1,5 +1,11 @@
 # Curiosity-Docker
 
+**New here?** Read **[`START_HERE.md`](START_HERE.md)** first — first-use steps
+for a junior Linux technician: files, configure, edit, and wire this into an
+AI harness or a locally built agent.
+
+![Curiosity-Docker: User or agent → MCP tools → Docker HTTP sidecar → candidate profile URLs](docs/hero.png)
+
 A small **Docker sidecar** that turns a public username/handle into **candidate
 social-profile URLs**, then hands those candidates to **AI agents**.
 
@@ -9,9 +15,7 @@ This repo is that missing worker: one authenticated HTTP service (and an MCP
 adapter in front of it) whose only job is “does this handle show up on public
 sites, and where?”
 
-The repository may be **private** while you evaluate it. These docs are written
-as if it were **public**: no site-specific hosts, no LAN addresses, no operator
-home paths.
+Clone: `git clone https://github.com/CynicalTyr/Curiosity-Docker.git`
 
 ## What this is for
 
@@ -141,10 +145,11 @@ reverse proxy.
 ## Quick start
 
 ```bash
-git clone <this-repository> Curiosity-Docker
+git clone https://github.com/CynicalTyr/Curiosity-Docker.git
 cd Curiosity-Docker
 cp .env.example .env
 # set USERNAME_DISCOVERY_API_KEY to a long random string
+# first-time operators: follow START_HERE.md from the top
 
 # Linux NAS / server (host network; default allowlist 127.0.0.1)
 docker compose up -d --build
@@ -164,6 +169,8 @@ then `docker compose up -d`.
 
 | Path | Role |
 | ---- | ---- |
+| `START_HERE.md` | First-use guide (edit, configure, harness + local AI) |
+| `docs/hero.png` | Banner: what the stack does for agents and users |
 | `Dockerfile` | Build image, pin analyzer SHA |
 | `docker-compose.yml` | Linux/NAS: host network |
 | `docker-compose.bridge.yml` | Desktop: `127.0.0.1:8095` |
