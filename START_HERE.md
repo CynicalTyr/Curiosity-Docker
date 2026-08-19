@@ -2,7 +2,7 @@
 
 **If you only open one file, open this one.**
 
-This is a first-use guide for a junior Linux technician. It assumes you can log
+This is a first-use guide. It assumes you can log
 into a Linux box, edit a text file, and paste commands. It does **not** assume
 you already know Docker, MCP, or how AI agents call tools.
 
