@@ -1,0 +1,25 @@
+# Secrets and local compose overrides
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+
+# Editor / OS
+.DS_Store
+*.swp
+*~
+
+# Backup copies from live NAS edits
+*.bak
+*.bak-*
+*.orig
+
+# Docker build junk
+.docker/

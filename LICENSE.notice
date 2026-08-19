@@ -1,0 +1,7 @@
+This container bundles qeeqbox/social-analyzer (commit 1ba0905e00d054aab833eb3693739c354db09e0f)
+under the GNU Affero General Public License v3.0.
+Upstream source: https://github.com/qeeqbox/social-analyzer
+
+The HTTP shim (shim_server.py) and MCP adapter (examples/mcp_server.py) are
+separate from that AGPL component. Keep SocialAnalyzer inside this image;
+do not copy upstream app.py into an agent repository.

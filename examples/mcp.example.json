@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "curiosity-username-discovery": {
+      "command": "python3",
+      "args": ["/absolute/path/to/Curiosity-Docker/examples/mcp_server.py"],
+      "env": {
+        "USERNAME_DISCOVERY_URL": "http://127.0.0.1:8095",
+        "USERNAME_DISCOVERY_API_KEY": "",
+        "USERNAME_DISCOVERY_TIMEOUT": "120"
+      }
+    }
+  }
+}

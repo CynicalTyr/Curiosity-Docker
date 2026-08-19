@@ -1,0 +1,23 @@
+# Linux / NAS default: host networking so a remote agent presents its real IP
+# to USERNAME_DISCOVERY_ALLOWED_IPS. Set that variable in .env (never commit .env).
+# Docker Desktop (Mac/Windows): use docker-compose.bridge.yml instead.
+
+services:
+  username-discovery:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        SOCIAL_ANALYZER_SHA: "1ba0905e00d054aab833eb3693739c354db09e0f"
+    image: curiosity-docker:fast
+    container_name: curiosity-username-discovery
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - ./shim_server.py:/opt/shim/shim_server.py:ro
+    environment:
+      USERNAME_DISCOVERY_API_KEY: "${USERNAME_DISCOVERY_API_KEY:?set in .env}"
+      USERNAME_DISCOVERY_ALLOWED_IPS: "${USERNAME_DISCOVERY_ALLOWED_IPS:-127.0.0.1}"
+      USERNAME_DISCOVERY_BIND: "${USERNAME_DISCOVERY_BIND:-0.0.0.0}"
+      USERNAME_DISCOVERY_PORT: "${USERNAME_DISCOVERY_PORT:-8095}"
+      USERNAME_DISCOVERY_SCAN_TIMEOUT: "${USERNAME_DISCOVERY_SCAN_TIMEOUT:-60}"

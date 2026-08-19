@@ -1,0 +1,25 @@
+# Portable compose for Docker Desktop (Mac/Windows) or when host networking
+# is unavailable. Publishes the API on loopback only. IP allowlisting is
+# unreliable through docker-proxy — set USERNAME_DISCOVERY_ALLOWED_IPS=*
+# and rely on the API key plus the loopback bind.
+
+services:
+  username-discovery:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        SOCIAL_ANALYZER_SHA: "1ba0905e00d054aab833eb3693739c354db09e0f"
+    image: curiosity-docker:fast
+    container_name: curiosity-username-discovery
+    restart: unless-stopped
+    ports:
+      - "${USERNAME_DISCOVERY_PUBLISH:-127.0.0.1:8095}:8095"
+    volumes:
+      - ./shim_server.py:/opt/shim/shim_server.py:ro
+    environment:
+      USERNAME_DISCOVERY_API_KEY: "${USERNAME_DISCOVERY_API_KEY:?set in .env}"
+      USERNAME_DISCOVERY_ALLOWED_IPS: "${USERNAME_DISCOVERY_ALLOWED_IPS:-*}"
+      USERNAME_DISCOVERY_BIND: "0.0.0.0"
+      USERNAME_DISCOVERY_PORT: "8095"
+      USERNAME_DISCOVERY_SCAN_TIMEOUT: "${USERNAME_DISCOVERY_SCAN_TIMEOUT:-60}"

@@ -1,0 +1,2 @@
+# Agent-host extras for examples/mcp_server.py (not installed in the Docker image).
+mcp>=1.9.0
