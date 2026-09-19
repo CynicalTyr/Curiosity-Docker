@@ -224,3 +224,9 @@ Upstream social-analyzer is **AGPL-3.0** and is present in the running image.
 If you modify that component and offer the service over a network, AGPL source
 obligations apply to that component. Keep it inside the container; do not copy
 it into agent trees. See `LICENSE.notice`.
+
+## Coffee and energy fund
+
+If the sidecar kept the scanner out of the agent process and you want more products like it, you can support CynicalTyr's coffee and energy fund. Skip it without a speech.
+
+<a title="Donate with PayPal" href="https://www.paypal.me/ctmskm" target="_blank" rel="noopener"><img src="https://moosenet.lol/assets/images/paypal-logo.png" alt="PayPal" width="140" height="50" /></a><a title="Donate with CashApp" href="https://cash.app/$MooseMeNow" target="_blank" rel="noopener"><img src="https://moosenet.lol/assets/images/cashapp-logo.png" alt="Cash App" width="140" height="55" /></a> <a title="Donate with Venmo" href="https://venmo.com/MooseMeNow" target="_blank" rel="noopener"><img src="https://moosenet.lol/assets/images/venmo-logo-600x188.png" alt="Venmo" width="140" height="50" /></a>
